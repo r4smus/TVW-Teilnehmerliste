@@ -1,3 +1,13 @@
-<h1>
-  {{title}}
-</h1>
+<header>
+    <div class="title">
+        <div class="logo"></div>
+        <h1>{{title}}</h1>
+    </div>
+    <h2>{{subtitle}}</h2>
+    <nav>
+        <ul>
+            <li><a routerLink="/" routerLinkActive="active">Teilnehmerliste</a></li>
+            <li><a routerLink="/verwaltung" routerLinkActive="active">Verwaltung</a></li>
+        </ul>
+    </nav>
+</header>
