@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+header {
+    width: 100%;
+    max-width: 740px;
+    margin: 0 auto;
+}
+
 body {
     font-family: verdana;
     letter-spacing: 0.1em;
@@ -19,18 +25,12 @@ h1 {
 
 h2 {
     font-weight: bold;
-    font-size: medium;
+    font-size: x-large;
     color: #423535;
 }
 
 
 /* NAVBAR */
-
-nav {
-    width: 100%;
-    max-width: 740px;
-    margin: 0 auto;
-}
 
 nav ul {
     padding: 0 !important;
@@ -49,11 +49,11 @@ nav li {
 
 nav a {
     text-align: center;
-    padding: 7px 0;
+    padding: 10px 0;
     color: #eee;
     display: block;
     text-decoration: none;
-    font-size: x-small;
+    font-size: large;
 }
 
 nav a:hover {
@@ -73,4 +73,38 @@ nav a:hover {
     max-width: 740px;
     box-sizing: border-box;
     margin: 0 auto
+}
+
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    max-width: 740px;
+    margin: 0 auto;
+    margin-top: 18px;
+}
+
+footer ul {
+    padding: 0 !important;
+    background: #B02C2A;
+    display: flex;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+    margin-top: 0;
+}
+
+footer li {
+    flex-basis: 0;
+    flex-grow: 1;
+    list-style-type: none;
+}
+
+footer a {
+    text-align: center;
+    padding: 7px 0;
+    color: #eee;
+    display: block;
+    text-decoration: none;
+    font-size: x-small;
 }
