@@ -7,14 +7,15 @@
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
     border-radius: 2px;
     background: #ffffff;
-    padding: 10px;
+    padding: 20px;
 }
 
 #training-list li img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     float: right;
     margin-left: 20px;
+    margin-top: -5px;
 }
 
 #training-list li img:hover {
