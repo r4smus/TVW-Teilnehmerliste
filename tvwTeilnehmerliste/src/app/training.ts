@@ -5,4 +5,5 @@ export class Training {
     date: string;
     trainers: Member[];
     members: Member[];
+    showDetails: boolean;
 }

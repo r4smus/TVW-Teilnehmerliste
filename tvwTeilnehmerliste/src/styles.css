@@ -29,6 +29,10 @@ h2 {
     color: #423535;
 }
 
+.clearer {
+    clear: both;
+}
+
 
 /* NAVBAR */
 

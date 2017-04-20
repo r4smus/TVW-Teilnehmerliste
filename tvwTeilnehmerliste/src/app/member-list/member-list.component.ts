@@ -18,7 +18,8 @@ export class MemberListComponent implements OnInit {
                                       {  id: 1, firstName: 'Christian', lastName: 'Kienle', telNumber: '08236473'},
                                       {  id: 2, firstName: 'Andreas', lastName: 'Haugg', telNumber: '0823652547'},
                                       {  id: 3, firstName: 'Fabian', lastName: 'Winzig', telNumber: '0823245645'}
-                                   ]},
+                                   ],
+                          showDetails: false},
                           {id: 2,
                           date: '11.04.2017',
                           trainers: [
@@ -30,7 +31,8 @@ export class MemberListComponent implements OnInit {
                                       {  id: 3, firstName: 'Fabian', lastName: 'Winzig', telNumber: '0823245645'},
                                       {  id: 4, firstName: 'Max', lastName: 'Groß', telNumber: '0823245645'},
                                       {  id: 5, firstName: 'Hans', lastName: 'Wurst', telNumber: '02016546566'}
-                                   ]}
+                                   ],
+                          showDetails: false}
                          ];
 
 
@@ -38,6 +40,15 @@ export class MemberListComponent implements OnInit {
 
   ngOnInit() {
     
+  }
+
+  showDetails(training: Training) {
+    console.log('show details');
+    if (training.showDetails) {
+      training.showDetails = false;
+    }else {
+        training.showDetails = true;
+    }
   }
 
 }
