@@ -12,7 +12,8 @@ export class MemberListComponent implements OnInit {
                           {id: 1,
                           date: '20.03.2017',
                           trainers: [
-                                      { id: 1, firstName: 'Stefan', lastName: 'Böck', telNumber: '01254785565'}
+                                      { id: 1, firstName: 'Stefan', lastName: 'Böck', telNumber: '01254785565'},
+                                      { id: 3, firstName: 'Tom', lastName: 'Körtge', telNumber: '01254785565'}
                                     ],
                           members: [
                                       {  id: 1, firstName: 'Christian', lastName: 'Kienle', telNumber: '08236473'},
