@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing-module';
 import { AppComponent } from './app.component';
 import { MemberListComponent } from './member-list/member-list.component';
 import { ManagementComponent } from './management/management.component';
+import { AddTrainingComponent } from './add-training/add-training.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MemberListComponent,
-    ManagementComponent
+    ManagementComponent,
+    AddTrainingComponent
   ],
   imports: [
     BrowserModule,
