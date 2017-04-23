@@ -1,3 +1,28 @@
-<p>
-  add-training works!
-</p>
+<form>
+    <h3>Neues Training erstellen</h3>
+    <div>
+        <h4>Datum auswählen:</h4>
+        <label for="inputTrainingDate">Datum</label>
+        <input name="inputTrainingDate" #trainingDate />
+    </div>
+    <div>
+        <h4>Übungsleiter auswählen:</h4>
+        <ul>
+            <li *ngFor="let trainer of trainers">
+                {{trainer.firstName}} {{trainer.lastName}}
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h4>Teilnehmer auswählen:</h4>
+        <ul>
+            <li *ngFor="let member of members">
+                {{member.firstName}} {{member.lastName}}
+            </li>
+        </ul>
+    </div>
+    <div>
+        <img class="save" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADc0lEQVRoQ+2ZXUhTYRjH/+fMsOnSmZgKUoiaK8uZF0VKpOTADDGEguqiboKuwrC8qC7qwptMMQILQrrqQiIqkqFpplQXmSznRypZehNZDjc/Nt2OO+uc6camc9ur58xj7L17d97n2f/3f96Ps3cUtnijtrh+hAE2u4L/ZwXmThx2uJzt+zXj0+S/DY0bNr+o+po7h8OBuzs6uu+QJvVZgc0A4IWvB0JUgKrrlV6G3rtf69X3rIDrASmE5ABIKyFJABIIyQLwEIp33QF3yTCAv21vPYvYM1+4ArwbQ79nwbDuc81tkKG6BmzcTtJzxz1ebjQgv6Hab7wgFZi22PBnxooFuzeEVZ2LubJy2JOSiSGiJyeQ3tGMhNFB8QGI1QkYIEgFBNRDnCoMQGyZwAHhCvCGyp88A52aLrC3vtOxY6OYv3zB/VCQCkS3fw6JeNeXmIuOhAHg+YtsZQV6R34QVaSh7ioS4+VQH8iEKqcUi7IEr/iczDSvvugVIAV4/vQGPvQzeHjuC9S7TbDKUmGUaTCpuAT7tliEHIDIfm5w2+tqKKYe4WiaYSlUngX0jwAxGUBpBxAZF9oKkAJgYRzoVi2Lz+HEDwCMeakfz/VXQEhuCvE69xs0sLOx2D48CIplvD1YASFJgKSpB0gceLxavAvFA0J0AOIpxAcwc4D2JDDxce3wZQjzqWKJngNBQpgbaQ44wgkhyklMuo16Wk4vmpGhPw/57No/ZFhjFOa7uEXPQUgOgIeRMSak910MCkLRotv4tYoo70LWKaBZAxh0a64JvhJ69e1duSU3J/2tu4D3QqIA8IoCQOgdtzC2t0Qnl1Oa4rw8jth3Cwgg6us0D/EqHzANe6nrZ6vwU1Xm/Iy77NUxtPL42cIsbitb3QICrGvbJAiiIm2QFwyDillwRn2zV+D7vjPuDDTD6LO73s7GWiylcfX1ppWpNx2AF+SCGIq+skq8ul27J4K1K7lLnc6U2trCoAAIDBRs6PiL8uReZWUr97fjQT5pBGP7lN2uzZKxrHJpKjn0KXV13MuTdwu4TQmmMIhEL99/VYK1tMoWbeyhNq2KdiyLB6ZB0wUpNTW9kgbgxb3p6YlSNzW1cM4fczrvR7xz+gVhTMiHGCsqlGaa7qQoSumg6dO+nHeJkiQAiWNhABK3xBgbroAYrpLk/AfNpfZAV8mUUgAAAABJRU5ErkJggg==">
+        <img class="cancel" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAE00lEQVRoQ+2ZTWxUVRTHz32P0bHzBl2wKDFGkSh+lBSl7xUTWmbeM7IwEtwIhIUbY8CVRtOAIEZs1fgRXfm10YURSYzBhVFjZyhtFTrTGqENohFCohGNLpTO2MHhveP/zTCmnc68d998QZPeRZvOnHvu+d1z7rnn3Apa4EMscPtpEeBye3DRAyUPzPQaK+wl9BAJvpdJXI3P24lpeeF7Qefw8zdBfAF/fKXk+UDbcPrnRnivLg9wbO2yrKpsJxbbYGS3tEGMIcSowvRhm2N/LIYm/pSeWyZYEwBjG/+Jdz0AIwZIiI5aFy/O40nhiN2Rw6nPatETGGAmrm+wFXodDHfVsmC1OfDJ1ypRX1sy/U0QvYEAZky91yY6iF1vD7KIvCyfY3K2RxMTh2XnSANkTH0XDO+HYmxUU4dNzLu0ZPpVmVWkADLm2vtIKJ8jbBQZpfXLsAMd92uJ9Bd+unwBcr3dt+RDPA7BpX7KGvk9E/8dImGEE6kfvfT6AkxbxlEIrWukcbK6kO1Go4lUT80A01bXVkHKAdkFmyGHzXswkkgdqqa7qgdAr2RN4wwuqBt9DVNUUu7oIGfquK+oK6B0dJJzcorIQU7zHTwZSaTXwFD3XMwbVQFg/A4W9Javfhgf3vcCqff0UG5gL9nDSc8paq9J4T39ZB8dodz+p6UgBNPOSDL1diCAjGkc8y0PQqGCMer6WFG3bXtClIwntZiJ7dGhgjzl8977xDSmJVMVz2FFD2Riejsp9CvyvuchV27voGtee5PoKrd2uzRciP49ZI/MvYvUnjiF9w7gFpl1jfx7gWaefIyc7xFOXsMtnfLO9ZGRCbconDMqGigdPlCl6uso/NzL8yFmhVP5zhcsgPG5Z/vITh/zjVJXoFoYVfaApb+PKQ9LafaBcHW4YVa+80GMd3UgqbyDlLpDygMZy3BvwI2yAK5cRU84lxKHMusCD7jzJRsA8CkANssBmMZ3OMCdQQCqQsxWUqPxBRVMx3GQ10gBTFv6X4LEtUEB/od4HnXYktDc6cg0uX1PScd8+dpuaRFNpK9rDcB+ACDFzhkXAfBMqwBM/RQy6KqgHqh4DhoUQsikP0ST6dvkPGDqQwDYEASg6YeY+QgAYlIAGUv/CGl0iyyA113QqDSKU3wQ/cFWOYBi9/WiDECrLjJi5wktOf6GFEDOMm69yHzqSiol0Awu1xJjv0sBuEILupgrAkiGUQvKaTT5u9Hkv1QppL0bGsv4CZNW+J6FgA2N2nk32ZNofmQaGqaz6AVWBm5oXKOvhJYS70TboolxZMXKw7epR0o9gZS62tcLzRBgnkLoeK7tDxA3Olmh4dY/q9B5Iez12uDEpNfe+AIUD/RleNgStFEbTA/6OVYKoAjR9ThyMR51WzCqXFqBslAl4Uxct1gRnzQrnNC0nEerv7kpj7sloFy8a1VeiEMo9uZVhvX4xq02Q0Js8ntKlL6JvYzh2E3hjLLsEUD0IUPdUI/h6LR+YcGvaPYf74qhs7mguqTPQDXF2bj+KP5TswUtqBlocSa8gPEHSJPvBZpXJlw3QEkfd3cvzWrOJuzonfgnH25OXomYvtn9HoucwWen8dlp/P5Wy4ovxdgY4r3+0TCA+k2pTcMiQG371rhZix5o3F7Wpuk/+OAgT5P16x0AAAAASUVORK5CYII=">
+    </div>
+</form>
