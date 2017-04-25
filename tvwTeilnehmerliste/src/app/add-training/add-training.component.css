@@ -1,4 +1,4 @@
-.chooseTrainerBox {
+.chooseBox {
     width: 283px;
     border-bottom-style: solid;
     border-right-style: solid;
@@ -8,9 +8,9 @@
     background: white;
 }
 
-.chooseTrainerBox h4 {
+.chooseBox h4 {
     background: #B02C2A;
-    padding: 10px;
+    padding: 15px;
     border-top-style: solid;
     border-width: 2px;
     border-top-left-radius: 15px;
@@ -18,20 +18,41 @@
     color: white;
 }
 
-.chooseTrainerBox li {
+.chooseBox li {
     list-style-type: none;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-.chooseTrainerBox li div {
+.chooseBox li div {
     background: #BBDEFB;
     border-radius: 5px;
     padding: 5px;
     max-width: 195px;
 }
 
-.chooseTrainerBox li div:hover {
+.chooseBox li div:hover {
     background: #43A047;
     cursor: pointer;
     color: white;
+}
+
+.dateRow {
+    margin: 15px;
+}
+
+.dateRow input {
+    max-width: 100px;
+    height: 20px;
+}
+
+.buttonRow {
+    margin: 20px;
+}
+
+.buttonRow img {
+    margin-right: 20px;
+}
+
+.buttonRow img:hover {
+    cursor: pointer;
 }
