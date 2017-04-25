@@ -31,6 +31,7 @@
 }
 
 .chooseTrainerBox li div:hover {
-    background: #FF9B0C;
+    background: #43A047;
     cursor: pointer;
+    color: white;
 }
