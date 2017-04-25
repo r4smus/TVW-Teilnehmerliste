@@ -1,0 +1,36 @@
+.chooseTrainerBox {
+    width: 283px;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-width: 2px;
+    border-radius: 15px;
+    background: white;
+}
+
+.chooseTrainerBox h4 {
+    background: #B02C2A;
+    padding: 10px;
+    border-top-style: solid;
+    border-width: 2px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color: white;
+}
+
+.chooseTrainerBox li {
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+.chooseTrainerBox li div {
+    background: #BBDEFB;
+    border-radius: 5px;
+    padding: 5px;
+    max-width: 195px;
+}
+
+.chooseTrainerBox li div:hover {
+    background: #FF9B0C;
+    cursor: pointer;
+}

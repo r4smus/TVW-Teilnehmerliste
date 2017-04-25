@@ -1,23 +1,23 @@
 <form>
     <h3>Neues Training erstellen</h3>
     <div>
-        <h4>Datum auswählen:</h4>
+        <h4>Datum auswählen</h4>
         <label for="inputTrainingDate">Datum</label>
         <input name="inputTrainingDate" #trainingDate />
     </div>
-    <div>
-        <h4>Übungsleiter auswählen:</h4>
+    <div class="chooseTrainerBox">
+        <h4>Übungsleiter auswählen</h4>
         <ul>
             <li *ngFor="let trainer of trainers">
-                {{trainer.firstName}} {{trainer.lastName}}
+                <div>{{trainer.firstName}} {{trainer.lastName}}</div>
             </li>
         </ul>
     </div>
     <div>
-        <h4>Teilnehmer auswählen:</h4>
+        <h4>Teilnehmer auswählen</h4>
         <ul>
             <li *ngFor="let member of members">
-                {{member.firstName}} {{member.lastName}}
+                <div>{{member.firstName}} {{member.lastName}}</div>
             </li>
         </ul>
     </div>
