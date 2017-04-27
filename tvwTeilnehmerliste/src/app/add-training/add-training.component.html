@@ -10,7 +10,7 @@
         <h4>Übungsleiter auswählen</h4>
         <ul>
             <li *ngFor="let trainer of trainers">
-                <div>{{trainer.firstName}} {{trainer.lastName}}</div>
+                <div (click)="selectMember(trainer)" class="{{styleMember(trainer)}}">{{trainer.firstName}} {{trainer.lastName}}</div>
             </li>
         </ul>
     </div>
@@ -18,7 +18,7 @@
         <h4>Teilnehmer auswählen</h4>
         <ul>
             <li *ngFor="let member of members">
-                <div>{{member.firstName}} {{member.lastName}}</div>
+                <div (click)="selectMember(member)" class="{{styleMember(member)}}">{{member.firstName}} {{member.lastName}}</div>
             </li>
         </ul>
     </div>

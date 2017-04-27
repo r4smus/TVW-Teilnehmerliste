@@ -56,3 +56,12 @@
 .buttonRow img:hover {
     cursor: pointer;
 }
+
+.chooseBox li .notSelectedBackground {
+    background: #BBDEFB;
+}
+
+.chooseBox li .selectedBackground {
+    background: #43A047;
+    color: white;
+}
