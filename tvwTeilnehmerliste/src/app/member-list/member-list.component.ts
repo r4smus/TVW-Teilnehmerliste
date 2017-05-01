@@ -40,7 +40,6 @@ export class MemberListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
   }
 
   showDetails(training: Training) {
@@ -49,6 +48,13 @@ export class MemberListComponent implements OnInit {
       training.showDetails = false;
     }else {
         training.showDetails = true;
+    }
+  }
+
+  deleteTraining(training: Training) {
+    let index = this.trainings.indexOf(training, 0);
+    if ( index > -1 ) {
+      this.trainings.splice(index, 1);
     }
   }
 
