@@ -1,14 +1,15 @@
 package de.chris.tvwbackend.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -22,13 +23,18 @@ public class Training {
 	
 	private Date date;
 
-	@NotNull
-	@OneToMany(mappedBy="trainer")
-	private List<Member> trainers;
+	@OneToMany(
+	        cascade = CascadeType.ALL, 
+	        orphanRemoval = true
+	    )
+	private List<Member> trainers = new ArrayList<Member>();
 
-	@NotNull
-	@OneToMany(mappedBy="member")
-	private List<Member> members;
+	@OneToMany(
+	        cascade = CascadeType.ALL, 
+	        orphanRemoval = true
+	    )
+	private List<Member> members = new ArrayList<Member>();
+	
 	
 	public Training() {
 		super();
@@ -54,16 +60,8 @@ public class Training {
 		return trainers;
 	}
 
-	public void setTrainers(List<Member> trainers) {
-		this.trainers = trainers;
-	}
-
 	public List<Member> getMembers() {
 		return members;
-	}
-
-	public void setMembers(List<Member> members) {
-		this.members = members;
 	}
 	
 	public String toString() {
