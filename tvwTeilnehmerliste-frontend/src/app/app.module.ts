@@ -10,6 +10,8 @@ import { MemberListComponent } from './member-list/member-list.component';
 import { ManagementComponent } from './management/management.component';
 import { AddTrainingComponent } from './add-training/add-training.component';
 
+import { TvwApiService } from './tvw-api.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,7 @@ import { AddTrainingComponent } from './add-training/add-training.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [TvwApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

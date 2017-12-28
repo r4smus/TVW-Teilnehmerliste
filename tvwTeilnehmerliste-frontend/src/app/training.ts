@@ -7,11 +7,11 @@ export class Training {
     members: Member[];
     showDetails: boolean;
 
-    constructor (id: number, date: string, trainers: Member[], members: Member[], showDetails: boolean) {
+    constructor (id: number, date: string, trainers: Member[], members: Member[]) {
         this.id = id;
         this.date = date;
         this.trainers = trainers;
         this.members = members;
-        this.showDetails = showDetails;
+        this.showDetails = false;
     }
 }

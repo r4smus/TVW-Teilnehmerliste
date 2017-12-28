@@ -1,8 +1,7 @@
 package de.chris.tvwbackend.controllers;
 
-import java.util.ArrayList;
+
 import java.util.Date;
-import java.util.List;
 
 import javax.annotation.PostConstruct;
 
@@ -49,6 +48,7 @@ public class TvwBackendController {
     }
     
     private void initTestData1() {
+    	//Training 1
     	Training training1 = new Training();
 		training1.setDate(new Date());
 		
@@ -63,11 +63,33 @@ public class TvwBackendController {
 		training1.getMembers().add(member2);
 		
 		Member trainer1 = new Member();
-		trainer1.setFirstName("Martin");
+		trainer1.setFirstName("Hans");
 		trainer1.setLastName("Mustermann");
 		
 		training1.getTrainers().add(trainer1);
 		
 		trainingRepository.save(training1);
+		
+		//Training 2
+		Training training2 = new Training();
+		training2.setDate(new Date());
+		
+		Member member3 = new Member();
+		member3.setFirstName("Peter");
+		member3.setLastName("Pan");
+		Member member4 = new Member();
+		member4.setFirstName("Maria");
+		member4.setLastName("Meier");
+		
+		training2.getMembers().add(member3);
+		training2.getMembers().add(member4);
+		
+		Member trainer2 = new Member();
+		trainer2.setFirstName("Stefan");
+		trainer2.setLastName("Schmid");
+		
+		training2.getTrainers().add(trainer2);
+		
+		trainingRepository.save(training2);
     }
 }
