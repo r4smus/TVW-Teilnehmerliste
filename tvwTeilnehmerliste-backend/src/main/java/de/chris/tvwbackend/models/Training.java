@@ -33,7 +33,7 @@ public class Training {
 	        cascade = CascadeType.ALL, 
 	        orphanRemoval = true
 	    )
-	private List<Member> members = new ArrayList<Member>();
+	private List<Participant> participants = new ArrayList<Participant>();
 	
 	
 	public Training() {
@@ -60,8 +60,8 @@ public class Training {
 		return trainers;
 	}
 
-	public List<Member> getMembers() {
-		return members;
+	public List<Participant> getParticipants() {
+		return participants;
 	}
 	
 	public String toString() {

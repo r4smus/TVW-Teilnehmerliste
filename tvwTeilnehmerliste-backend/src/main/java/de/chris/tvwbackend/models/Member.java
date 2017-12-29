@@ -2,16 +2,16 @@ package de.chris.tvwbackend.models;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(value = {"createdAt"}, allowGetters = true)
-@Entity
+@MappedSuperclass
 public class Member {
 	
 	@Id
@@ -71,12 +71,6 @@ public class Member {
 		this.createdAt = createdAt;
 	}
     
-	@Override
-    public String toString() {
-        return String.format(
-                "Member[id=%s, firstName='%s', lastName='%s']",
-                id, firstName, lastName);
-    }
     
     
 	

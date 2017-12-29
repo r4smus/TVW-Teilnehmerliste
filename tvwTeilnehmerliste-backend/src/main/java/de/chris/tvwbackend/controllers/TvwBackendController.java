@@ -11,8 +11,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import de.chris.tvwbackend.models.Member;
+import de.chris.tvwbackend.models.Participant;
 import de.chris.tvwbackend.models.Trainer;
 import de.chris.tvwbackend.models.Training;
+import de.chris.tvwbackend.repositories.ParticipantRepository;
+import de.chris.tvwbackend.repositories.TrainerRepository;
 import de.chris.tvwbackend.repositories.TrainingRepository;
 
 @RestController
@@ -24,7 +27,13 @@ public class TvwBackendController {
     @Autowired
     TrainingRepository trainingRepository;
     
-    private static final boolean INIT_TEST_DATA = true; 
+    @Autowired
+    TrainerRepository trainerRepository;
+    
+    @Autowired
+    ParticipantRepository participantRepository;
+    
+    private static final boolean INIT_TEST_DATA = false; 
     
     @PostConstruct
 	public void  setup() {
@@ -48,24 +57,30 @@ public class TvwBackendController {
         }
     }
     
-//    public Iterable<Member> getAllTrainers(){
-//    	return 
-//    }
+    @GetMapping(value="/trainers")
+    public Iterable<Trainer> getAllTrainers(){
+    	return  trainerRepository.findAll();
+    }
+    
+    @GetMapping(value="/participants")
+    public Iterable<Participant> getAllParticipants(){
+    	return  participantRepository.findAll();
+    }
     
     private void initTestData1() {
     	//Training 1
     	Training training1 = new Training();
 		training1.setDate(new Date());
 		
-		Member member1 = new Member();
-		member1.setFirstName("Chris");
-		member1.setLastName("Kienle");
-		Member member2 = new Member();
-		member2.setFirstName("Gudrun");
-		member2.setLastName("Kienle");
+		Participant part1 = new Participant();
+		part1.setFirstName("Chris");
+		part1.setLastName("Kienle");
+		Participant part2 = new Participant();
+		part2.setFirstName("Gudrun");
+		part2.setLastName("Kienle");
 		
-		training1.getMembers().add(member1);
-		training1.getMembers().add(member2);
+		training1.getParticipants().add(part1);
+		training1.getParticipants().add(part2);
 		
 		Trainer trainer1 = new Trainer();
 		trainer1.setFirstName("Hans");
@@ -79,15 +94,15 @@ public class TvwBackendController {
 		Training training2 = new Training();
 		training2.setDate(new Date());
 		
-		Member member3 = new Member();
-		member3.setFirstName("Peter");
-		member3.setLastName("Pan");
-		Member member4 = new Member();
-		member4.setFirstName("Maria");
-		member4.setLastName("Meier");
+		Participant part3 = new Participant();
+		part3.setFirstName("Peter");
+		part3.setLastName("Pan");
+		Participant part4 = new Participant();
+		part4.setFirstName("Maria");
+		part4.setLastName("Meier");
 		
-		training2.getMembers().add(member3);
-		training2.getMembers().add(member4);
+		training2.getParticipants().add(part3);
+		training2.getParticipants().add(part4);
 		
 		Trainer trainer2 = new Trainer();
 		trainer2.setFirstName("Stefan");
