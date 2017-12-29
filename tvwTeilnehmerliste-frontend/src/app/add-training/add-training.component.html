@@ -10,15 +10,15 @@
         <h4>Übungsleiter auswählen</h4>
         <ul>
             <li *ngFor="let trainer of trainers">
-                <div (click)="selectMember(trainer)" class="{{styleMember(trainer)}}">{{trainer.firstName}} {{trainer.lastName}}</div>
+                <div (click)="selectTrainer(trainer)" class="{{styleTrainer(trainer)}}">{{trainer.firstName}} {{trainer.lastName}}</div>
             </li>
         </ul>
     </div>
     <div class="chooseBox">
         <h4>Teilnehmer auswählen</h4>
         <ul>
-            <li *ngFor="let member of members">
-                <div (click)="selectMember(member)" class="{{styleMember(member)}}">{{member.firstName}} {{member.lastName}}</div>
+            <li *ngFor="let participant of participants">
+                <div (click)="selectParticipant(participant)" class="{{styleParticipant(participant)}}">{{participant.firstName}} {{participant.lastName}}</div>
             </li>
         </ul>
     </div>

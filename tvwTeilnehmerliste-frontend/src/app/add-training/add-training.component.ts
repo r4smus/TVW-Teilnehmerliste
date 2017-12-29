@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Member } from '../member';
+import { Trainer } from '../trainer';
+import { Participant } from '../participant';
+
+import { TvwApiService } from '../tvw-api.service';
 
 @Component({
   selector: 'app-add-training',
@@ -7,35 +11,56 @@ import { Member } from '../member';
   styleUrls: ['./add-training.component.css']
 })
 export class AddTrainingComponent implements OnInit {
-  trainers: Member[] = [
-                         { id: 1, firstName: 'Stefan', lastName: 'Böck', telNumber: '01254785565', selected: false},
-                         { id: 2, firstName: 'Martin', lastName: 'Bröll', telNumber: '01254785565', selected: false},
-                         { id: 3, firstName: 'Tom', lastName: 'Körtge', telNumber: '01254785565', selected: false}
-                       ];
-  members: Member[] =  [
-                         {  id: 1, firstName: 'Christian', lastName: 'Kienle', telNumber: '08236473', selected: false},
-                         {  id: 2, firstName: 'Andreas', lastName: 'Haugg', telNumber: '0823652547', selected: false},
-                         {  id: 3, firstName: 'Fabian', lastName: 'Winzig', telNumber: '0823245645', selected: false},
-                         {  id: 4, firstName: 'Max', lastName: 'Groß', telNumber: '0823245645', selected: false},
-                         {  id: 5, firstName: 'Hans', lastName: 'Wurst', telNumber: '02016546566', selected: false}
-                       ];
-  
 
-  constructor() { }
+  trainers: Trainer[];
+  participants: Participant[];
+
+
+  constructor(
+    private tvwApiService: TvwApiService,
+  ) { }
 
   ngOnInit() {
+    this.getTrainers();
+    this.getParticipants();
   }
 
-  selectMember(member: Member) {
-    if (member.selected) {
-      member.selected = false;
+  getTrainers(): void {
+    this.tvwApiService.getTrainers()
+      .then(trainers => this.trainers = trainers);
+  }
+
+  getParticipants(): void {
+    this.tvwApiService.getParticipants()
+      .then(participants => this.participants = participants);
+  }
+
+  selectTrainer(trainer: Trainer) {
+    if (trainer.selected) {
+      trainer.selected = false;
     }else{
-      member.selected = true;
+      trainer.selected = true;
     }
   }
 
-  styleMember(member: Member): string {
-    if (member.selected === false) {
+  styleTrainer(trainer: Trainer): string {
+    if (trainer.selected === false) {
+      return 'notSelectedBackground';
+    } else {
+      return 'selectedBackground';
+    }
+  }
+
+  selectParticipant(participant: Participant) {
+    if (participant.selected) {
+      participant.selected = false;
+    }else{
+      participant.selected = true;
+    }
+  }
+
+  styleParticipant(participant: Participant): string {
+    if (participant.selected === false) {
       return 'notSelectedBackground';
     } else {
       return 'selectedBackground';

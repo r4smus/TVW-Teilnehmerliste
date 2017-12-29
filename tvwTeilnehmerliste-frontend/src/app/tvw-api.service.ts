@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Training } from './training';
-import { Member } from './member';
+import { Trainer } from './trainer';
+import { Participant } from 'app/participant';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+
 
 @Injectable()
 export class TvwApiService {
@@ -14,6 +16,20 @@ export class TvwApiService {
     return this.http.get(this.baseUrl + '/tvw-api/trainings')
       .toPromise()
       .then(response => response.json() as Training[])
+      .catch(this.handleError);
+  }
+
+  getTrainers(): Promise<Trainer[]> {
+    return this.http.get(this.baseUrl + '/tvw-api/trainers')
+      .toPromise()
+      .then(response => response.json() as Trainer[])
+      .catch(this.handleError);
+  }
+
+  getParticipants(): Promise<Participant[]> {
+    return this.http.get(this.baseUrl + '/tvw-api/participants')
+      .toPromise()
+      .then(response => response.json() as Participant[])
       .catch(this.handleError);
   }
 
