@@ -27,7 +27,7 @@ public class Training {
 	        cascade = CascadeType.ALL, 
 	        orphanRemoval = true
 	    )
-	private List<Member> trainers = new ArrayList<Member>();
+	private List<Trainer> trainers = new ArrayList<Trainer>();
 
 	@OneToMany(
 	        cascade = CascadeType.ALL, 
@@ -56,7 +56,7 @@ public class Training {
 		this.date = date;
 	}
 
-	public List<Member> getTrainers() {
+	public List<Trainer> getTrainers() {
 		return trainers;
 	}
 

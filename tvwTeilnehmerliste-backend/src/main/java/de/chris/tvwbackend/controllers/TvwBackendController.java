@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import de.chris.tvwbackend.models.Member;
+import de.chris.tvwbackend.models.Trainer;
 import de.chris.tvwbackend.models.Training;
 import de.chris.tvwbackend.repositories.TrainingRepository;
 
@@ -23,7 +24,7 @@ public class TvwBackendController {
     @Autowired
     TrainingRepository trainingRepository;
     
-    private static final boolean INIT_TEST_DATA = false; 
+    private static final boolean INIT_TEST_DATA = true; 
     
     @PostConstruct
 	public void  setup() {
@@ -47,6 +48,10 @@ public class TvwBackendController {
         }
     }
     
+//    public Iterable<Member> getAllTrainers(){
+//    	return 
+//    }
+    
     private void initTestData1() {
     	//Training 1
     	Training training1 = new Training();
@@ -62,7 +67,7 @@ public class TvwBackendController {
 		training1.getMembers().add(member1);
 		training1.getMembers().add(member2);
 		
-		Member trainer1 = new Member();
+		Trainer trainer1 = new Trainer();
 		trainer1.setFirstName("Hans");
 		trainer1.setLastName("Mustermann");
 		
@@ -84,7 +89,7 @@ public class TvwBackendController {
 		training2.getMembers().add(member3);
 		training2.getMembers().add(member4);
 		
-		Member trainer2 = new Member();
+		Trainer trainer2 = new Trainer();
 		trainer2.setFirstName("Stefan");
 		trainer2.setLastName("Schmid");
 		
