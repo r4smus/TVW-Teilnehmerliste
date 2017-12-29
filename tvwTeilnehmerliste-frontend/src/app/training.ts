@@ -1,9 +1,10 @@
 import { Member } from './member';
+import { Trainer } from './trainer';
 
 export class Training {
     id: number;
     date: string;
-    trainers: Member[];
+    trainers: Trainer[];
     members: Member[];
     showDetails: boolean;
 
