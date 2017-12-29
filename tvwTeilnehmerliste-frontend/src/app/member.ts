@@ -1,4 +1,4 @@
-export class Member {
+export abstract class Member {
     id: number;
     firstName: string;
     lastName: string;

@@ -4,7 +4,6 @@ import javax.transaction.Transactional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import de.chris.tvwbackend.models.Member;
 import de.chris.tvwbackend.models.Participant;
 
 

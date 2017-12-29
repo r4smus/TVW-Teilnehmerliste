@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import de.chris.tvwbackend.models.Member;
 import de.chris.tvwbackend.models.Participant;
 import de.chris.tvwbackend.models.Trainer;
 import de.chris.tvwbackend.models.Training;

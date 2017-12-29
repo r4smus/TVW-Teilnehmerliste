@@ -1,9 +1,11 @@
 import { Member } from './member';
 
-export class Trainer extends Member {
+
+export class Participant extends Member {
+
     constructor (id: number, firstName: string, lastName: string, telNumber: string)
-  {
-    super(id, firstName, lastName, telNumber);
-  }
+        {
+            super(id, firstName, lastName, telNumber);
+        }
 
 }
