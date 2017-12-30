@@ -1,0 +1,17 @@
+.wrapper {
+	max-width: 40em;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.container {
+	padding: 1em;
+	margin-bottom: 1em;
+	background: deepskyblue;
+	transition: padding .3s;
+}
+
+.container.special {
+    background: green;
+    color: white;
+}

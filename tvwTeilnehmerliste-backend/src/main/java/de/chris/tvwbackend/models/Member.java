@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(value = {"createdAt"}, allowGetters = true)
+@JsonIgnoreProperties(value = {"createdAt", "selected"}, allowGetters = true)
 @MappedSuperclass
 public class Member {
 	
