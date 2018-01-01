@@ -1,14 +1,14 @@
 .wrapper {
-	max-width: 40em;
+    max-width: 40em;
     margin: 0 auto;
     cursor: pointer;
 }
 
 .container {
-	padding: 1em;
-	margin-bottom: 1em;
-	background: deepskyblue;
-	transition: padding .3s;
+    padding: 1em;
+    margin-bottom: 1em;
+    background: deepskyblue;
+    transition: padding .3s;
 }
 
 .container.special {
@@ -16,10 +16,11 @@
     color: white;
 }
 
-/* input {
-	display:none;
-  }
-  :checked + label {
-	border: 1px solid rgba(81, 203, 238, 1);
-	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  } */
+input {
+    display: none;
+}
+
+ :checked+label {
+    border: 1px solid rgba(81, 203, 238, 1);
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
