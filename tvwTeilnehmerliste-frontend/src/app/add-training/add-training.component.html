@@ -10,10 +10,8 @@
         <h4>Übungsleiter auswählen</h4>
         <ul>
             <li *ngFor="let trainer of trainers">
-                <div>
-                    <input id="chooseBox{{trainer.id}}" #trainerSelectedCheckBox type="checkbox" [checked]="trainer.selected" (change)="trainer.selected = ! trainer.selected" />
-                    <label for="chooseBox{{trainer.id}}">{{trainer.firstName}} {{trainer.lastName}}</label>
-                </div>
+                <input id="trainerChooseBox{{trainer.id}}" type="checkbox" [checked]="trainer.selected" (change)="trainer.selected = ! trainer.selected" />
+                <label for="trainerChooseBox{{trainer.id}}">{{trainer.firstName}} {{trainer.lastName}}</label>
             </li>
         </ul>
     </div>
@@ -21,7 +19,8 @@
         <h4>Teilnehmer auswählen</h4>
         <ul>
             <li *ngFor="let participant of participants">
-
+                <input id="participantChooseBox{{participant.id}}" type="checkbox" [checked]="participant.selected" (change)="participant.selected = ! participant.selected" />
+                <label for="participantChooseBox{{participant.id}}">{{participant.firstName}} {{participant.lastName}}</label>
             </li>
         </ul>
     </div>

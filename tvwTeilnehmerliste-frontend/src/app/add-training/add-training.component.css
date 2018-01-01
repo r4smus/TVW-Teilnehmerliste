@@ -21,19 +21,7 @@
 .chooseBox li {
     list-style-type: none;
     margin-bottom: 10px;
-}
-
-.chooseBox li div {
-    background: #BBDEFB;
-    border-radius: 5px;
     padding: 5px;
-    max-width: 195px;
-}
-
-.chooseBox li div:hover {
-    background: #43A047;
-    cursor: pointer;
-    color: white;
 }
 
 .dateRow {
@@ -62,9 +50,17 @@
     background: #BBDEFB;
 }
 
-.chooseBox li input:checked+label {
-    border: 1px solid rgba(81, 203, 238, 1);
-    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+.chooseBox li input:hover+label {
+    cursor: pointer;
     background: #43A047;
     color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.chooseBox li input:checked+label {
+    background: #43A047;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
 }
