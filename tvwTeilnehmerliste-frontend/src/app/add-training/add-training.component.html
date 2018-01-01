@@ -2,8 +2,8 @@
     <div class="chooseBox">
         <h4>Trainings-Datum</h4>
         <div class="dateRow">
-            <label for="inputTrainingDate">Datum</label>
-            <input name="inputTrainingDate" #trainingDate />
+            <label for="inputTrainingDate">Datum:</label>
+            <input type="date" id="inputTrainingDate" name="input" [(ngModel)]="newTraining.date" placeholder="dd.MM.yyyy" required />
         </div>
     </div>
     <div class="chooseBox">
@@ -32,4 +32,5 @@
             <img title="Abbrechen" class="cancel" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAE00lEQVRoQ+2ZTWxUVRTHz32P0bHzBl2wKDFGkSh+lBSl7xUTWmbeM7IwEtwIhIUbY8CVRtOAIEZs1fgRXfm10YURSYzBhVFjZyhtFTrTGqENohFCohGNLpTO2MHhveP/zTCmnc68d998QZPeRZvOnHvu+d1z7rnn3Apa4EMscPtpEeBye3DRAyUPzPQaK+wl9BAJvpdJXI3P24lpeeF7Qefw8zdBfAF/fKXk+UDbcPrnRnivLg9wbO2yrKpsJxbbYGS3tEGMIcSowvRhm2N/LIYm/pSeWyZYEwBjG/+Jdz0AIwZIiI5aFy/O40nhiN2Rw6nPatETGGAmrm+wFXodDHfVsmC1OfDJ1ypRX1sy/U0QvYEAZky91yY6iF1vD7KIvCyfY3K2RxMTh2XnSANkTH0XDO+HYmxUU4dNzLu0ZPpVmVWkADLm2vtIKJ8jbBQZpfXLsAMd92uJ9Bd+unwBcr3dt+RDPA7BpX7KGvk9E/8dImGEE6kfvfT6AkxbxlEIrWukcbK6kO1Go4lUT80A01bXVkHKAdkFmyGHzXswkkgdqqa7qgdAr2RN4wwuqBt9DVNUUu7oIGfquK+oK6B0dJJzcorIQU7zHTwZSaTXwFD3XMwbVQFg/A4W9Javfhgf3vcCqff0UG5gL9nDSc8paq9J4T39ZB8dodz+p6UgBNPOSDL1diCAjGkc8y0PQqGCMer6WFG3bXtClIwntZiJ7dGhgjzl8977xDSmJVMVz2FFD2Riejsp9CvyvuchV27voGtee5PoKrd2uzRciP49ZI/MvYvUnjiF9w7gFpl1jfx7gWaefIyc7xFOXsMtnfLO9ZGRCbconDMqGigdPlCl6uso/NzL8yFmhVP5zhcsgPG5Z/vITh/zjVJXoFoYVfaApb+PKQ9LafaBcHW4YVa+80GMd3UgqbyDlLpDygMZy3BvwI2yAK5cRU84lxKHMusCD7jzJRsA8CkANssBmMZ3OMCdQQCqQsxWUqPxBRVMx3GQ10gBTFv6X4LEtUEB/od4HnXYktDc6cg0uX1PScd8+dpuaRFNpK9rDcB+ACDFzhkXAfBMqwBM/RQy6KqgHqh4DhoUQsikP0ST6dvkPGDqQwDYEASg6YeY+QgAYlIAGUv/CGl0iyyA113QqDSKU3wQ/cFWOYBi9/WiDECrLjJi5wktOf6GFEDOMm69yHzqSiol0Awu1xJjv0sBuEILupgrAkiGUQvKaTT5u9Hkv1QppL0bGsv4CZNW+J6FgA2N2nk32ZNofmQaGqaz6AVWBm5oXKOvhJYS70TboolxZMXKw7epR0o9gZS62tcLzRBgnkLoeK7tDxA3Olmh4dY/q9B5Iez12uDEpNfe+AIUD/RleNgStFEbTA/6OVYKoAjR9ThyMR51WzCqXFqBslAl4Uxct1gRnzQrnNC0nEerv7kpj7sloFy8a1VeiEMo9uZVhvX4xq02Q0Js8ntKlL6JvYzh2E3hjLLsEUD0IUPdUI/h6LR+YcGvaPYf74qhs7mguqTPQDXF2bj+KP5TswUtqBlocSa8gPEHSJPvBZpXJlw3QEkfd3cvzWrOJuzonfgnH25OXomYvtn9HoucwWen8dlp/P5Wy4ovxdgY4r3+0TCA+k2pTcMiQG371rhZix5o3F7Wpuk/+OAgT5P16x0AAAAASUVORK5CYII=">
         </a>
     </div>
+    <p>{{newTraining.date}}</p>
 </form>
