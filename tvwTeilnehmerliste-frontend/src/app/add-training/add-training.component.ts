@@ -34,37 +34,4 @@ export class AddTrainingComponent implements OnInit {
     this.tvwApiService.getParticipants()
       .then(participants => this.participants = participants);
   }
-
-  selectTrainer(trainer: Trainer) {
-    if (trainer.selected) {
-      trainer.selected = false;
-    }else{
-      trainer.selected = true;
-    }
-  }
-
-  styleTrainer(trainer: Trainer): string {
-    if (trainer.selected === false) {
-      return 'notSelectedBackground';
-    } else {
-      return 'selectedBackground';
-    }
-  }
-
-  selectParticipant(participant: Participant) {
-    if (participant.selected) {
-      participant.selected = false;
-    }else{
-      participant.selected = true;
-    }
-  }
-
-  styleParticipant(participant: Participant): string {
-    if (participant.selected === false) {
-      return 'notSelectedBackground';
-    } else {
-      return 'selectedBackground';
-    }
-  }
-
 }
