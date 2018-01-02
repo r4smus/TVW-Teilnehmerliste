@@ -39,17 +39,32 @@ export class AddTrainingComponent implements OnInit {
   }
 
   saveTraining(): void {
-    // this.newTraining.trainers.push(this.getAllSelectedMembers(this.trainers));
-
+    this.newTraining.trainers = this.getAllSelectedTrainers(this.trainers);
+    this.newTraining.participants = this.getAllSelectedParticipants(this.participants);
+    if(this.newTraining.trainers.length == 0 || this.newTraining.participants.length == 0){
+      return;
+    }
+    this.tvwApiService.createTraining(this.newTraining);
   }
 
-  private getAllSelectedMembers(members: Member[]): Member[] {
-    let selectedMembers: Member[];
-    members.forEach(element => {
+  private getAllSelectedTrainers(trainers: Trainer[]): Trainer[] {
+    var selectedTrainers = new Array<Trainer>();
+    trainers.forEach(element => {
+      debugger;
       if (element.selected){
-        selectedMembers.push(element);
+        selectedTrainers.push(element);
       }
     });
-    return selectedMembers;
+    return selectedTrainers;
+  }
+
+  private getAllSelectedParticipants(participants: Participant[]): Participant[] {
+    var selectedParticipants = new Array<Participant>();
+    participants.forEach(element => {
+      if (element.selected){
+        selectedParticipants.push(element);
+      }
+    });
+    return selectedParticipants;
   }
 }

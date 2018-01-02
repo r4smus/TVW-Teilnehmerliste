@@ -4,11 +4,13 @@ package de.chris.tvwbackend.controllers;
 import java.util.Date;
 
 import javax.annotation.PostConstruct;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import de.chris.tvwbackend.models.Participant;
 import de.chris.tvwbackend.models.Trainer;
@@ -64,6 +66,11 @@ public class TvwBackendController {
     @GetMapping(value="/participants")
     public Iterable<Participant> getAllParticipants(){
     	return  participantRepository.findAll();
+    }
+    
+    @PostMapping("/trainings")
+    public Training createTraining(@Valid @RequestBody Training training) {
+        return trainingRepository.save(training);
     }
     
     private void initTestData1() {
