@@ -1,20 +1,3 @@
 <form>
-    <div class="wrapper" ng-app="">
-
-        <div ng-click="toggle = ! toggle" class="container" ng-class="{'special' : toggle }">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos eligendi corrupti dicta reprehenderit praesentium voluptatem. Architecto, ad accusamus, distinctio, quo sapiente tempora eius cupiditate labore vitae asperiores dolores sint quam maiores
-            at dolore deserunt deleniti est earum, praesentium aut commodi! Asperiores odio, a dolorum sit autem eum.
-        </div>
-        <input name="checkbox1" id="checkbox1" type="checkbox" ng-model="trainer.selected" ng-model-options="{ getterSetter: true }">
-        <label for="checkbox1">
-      Click me
-    </label>
-
-        <input #trainerSelectedCheckBox type="checkbox" [checked]="trainer.selected" (change)="onSaveTrainerChanged(trainerSelectedCheckBox.checked)" />
-
-        <p>{{trainer.selected}}</p>
-    </div>
-
-
-
+    <button routerLink="/createMember" routerLinkActive="active">Neues Mietglied erstellen</button>
 </form>

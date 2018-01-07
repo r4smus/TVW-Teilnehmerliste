@@ -11,13 +11,15 @@ import { ManagementComponent } from './management/management.component';
 import { AddTrainingComponent } from './add-training/add-training.component';
 
 import { TvwApiService } from './tvw-api.service';
+import { CreateMemberComponent } from './management/create-member/create-member.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MemberListComponent,
     ManagementComponent,
-    AddTrainingComponent
+    AddTrainingComponent,
+    CreateMemberComponent
   ],
   imports: [
     BrowserModule,

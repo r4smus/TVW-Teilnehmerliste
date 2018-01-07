@@ -73,6 +73,16 @@ public class TvwBackendController {
         return trainingRepository.save(training);
     }
     
+    @PostMapping("/createTrainer")
+    public Trainer createTrainer(@Valid @RequestBody Trainer trainer) {
+        return trainerRepository.save(trainer);
+    }
+    
+    @PostMapping("/createParticipant")
+    public Participant createParticipant(@Valid @RequestBody Participant participant) {
+        return participantRepository.save(participant);
+    }
+    
     private void initTestData1() {
     	//Training 1
     	Training training1 = new Training();
