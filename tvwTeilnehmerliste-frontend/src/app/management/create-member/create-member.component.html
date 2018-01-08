@@ -1,22 +1,25 @@
 <h3>Neues Mitglied erstellen</h3>
-<form>
-    <div>
-        <label for="inputFirstName">Vorname</label>
-        <input id="inputFirstName" type="text" name="input" required>
-    </div>
-    <div>
-        <label for="inputLastName">Nachname</label>
-        <input id="inputLastName" type="text" name="input" required>
-    </div>
-    <div>
-        <label for="inputMemberType">Typ</label>
-        <select id="inputMemberType">
-          <option value="volvo">Trainer</option>
-          <option value="saab">Teilnehmer</option>
-      </select>
-    </div>
-    <span>
-      <button>Speichern</button>
-      <button>Abbrechen</button>
-    </span>
-</form>
+<div ng-controller="create-member-controller">
+        <div>
+            <label for="inputFirstName">Vorname</label>
+            <input id="inputFirstName" type="text" name="input" [(ngModel)]="firstName" required>
+        </div>
+        <div>
+            <label for="inputLastName">Nachname</label>
+            <input id="inputLastName" type="text" name="input" [(ngModel)]="lastName" required>
+        </div>
+        <div>
+            <label for="inputMemberType">Typ</label>
+            <select  id="inputMemberType"
+                    [(ngModel)]="selectedType">
+                    <option value="Teilnehmer">Teilnehmer</option>
+                    <option value="Trainer">Trainer</option>
+            </select>
+        </div>
+        <span>
+        <button (click)="save()">Speichern</button>
+        <button>Abbrechen</button>
+        </span>
+        <p>{{firstName}} {{lastName}}</p>
+        <p>{{selectedType}}</p>
+</div>

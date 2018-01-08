@@ -33,6 +33,13 @@ export class TvwApiService {
       .catch(this.handleError);
   }
 
+  createTrainer(trainerData: Trainer): Promise<Trainer> {
+    return this.http.post(this.baseUrl + '/api/createTrainer', trainerData)
+      .toPromise().then(response => response.json() as Trainer)
+      .catch(this.handleError);
+  }
+  
+
   createTraining(trainingData: Training): void {
     this.http.post(this.baseUrl + '/tvw-api/trainings', trainingData);
   }
