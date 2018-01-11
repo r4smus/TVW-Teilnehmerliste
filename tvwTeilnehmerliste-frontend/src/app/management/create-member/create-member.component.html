@@ -2,23 +2,23 @@
 <div ng-controller="create-member-controller">
         <div>
             <label for="inputFirstName">Vorname</label>
-            <input id="inputFirstName" type="text" name="input" [(ngModel)]="firstName" required>
+            <input id="inputFirstName" type="text" name="input" [(ngModel)]="newMember.firstName" required>
         </div>
         <div>
             <label for="inputLastName">Nachname</label>
-            <input id="inputLastName" type="text" name="input" [(ngModel)]="lastName" required>
+            <input id="inputLastName" type="text" name="input" [(ngModel)]="newMember.lastName" required>
         </div>
         <div>
             <label for="inputMemberType">Typ</label>
             <select  id="inputMemberType"
                     [(ngModel)]="selectedType">
-                    <option value="Teilnehmer">Teilnehmer</option>
-                    <option value="Trainer">Trainer</option>
+                    <option value="{{TYPE_TRAINER}}">{{TYPE_TRAINER}}</option>
+                    <option value="{{TYPE_PARTICIPANT}}">{{TYPE_PARTICIPANT}}</option>
             </select>
         </div>
         <span>
-        <button (click)="save()">Speichern</button>
-        <button>Abbrechen</button>
+        <button (click)="save()" routerLink="/management" routerLinkActive="active">Speichern</button>
+        <button routerLink="/management" routerLinkActive="active">Abbrechen</button>
         </span>
         <p>{{firstName}} {{lastName}}</p>
         <p>{{selectedType}}</p>

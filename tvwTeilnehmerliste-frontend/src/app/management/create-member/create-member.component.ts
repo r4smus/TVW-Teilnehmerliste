@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Trainer } from '../../trainer';
+import { Member } from '../../member';
 import { Participant } from '../../participant';
 
 import { TvwApiService } from '../../tvw-api.service'
@@ -10,10 +11,10 @@ import { TvwApiService } from '../../tvw-api.service'
   styleUrls: ['./create-member.component.css']
 })
 export class CreateMemberComponent implements OnInit {
-  firstName: string;
-  lastName: string;
   selectedType: string;
-  newTrainer: Trainer;
+  newMember: Member;
+  readonly TYPE_TRAINER: string = 'Trainer';
+  readonly TYPE_PARTICIPANT: string = 'Teilnehmer';
 
 
   constructor(
@@ -21,27 +22,29 @@ export class CreateMemberComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.firstName = '';
-    this.lastName = '';
-    this.newTrainer = new Trainer();
+    this.newMember = new Member();
   }
 
-  createTrainer(): void {
-    debugger;
-    this.newTrainer.firstName = this.firstName;
-    this.newTrainer.lastName = this.lastName;
-    this.tvwApiService.createTrainer(this.newTrainer);
+  private createTrainer(): void {
+    this.newMember = this.newMember as Trainer;
+    this.tvwApiService.createTrainer(this.newMember);
+  }
+
+  private createParticipant(): void {
+    this.newMember = this.newMember as Participant;
+    this.tvwApiService.createParticipant(this.newMember);
   }
 
   save(): void {
     if(this.selectedType == null || this.selectedType == ''){
+      //TODO: show exception that no type was selected.
       return;
     }
-    if(this.selectedType == 'Trainer'){
+    if(this.selectedType == this.TYPE_TRAINER){
       this.createTrainer();
     }
-    if(this.selectedType == 'Teilnehmer'){
-      //TODO: move option values as a string array into this class and refernce them here
+    if(this.selectedType == this.TYPE_PARTICIPANT){
+      this.createParticipant();
     }
   }
 
