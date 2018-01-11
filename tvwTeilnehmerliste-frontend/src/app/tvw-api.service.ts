@@ -8,40 +8,39 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class TvwApiService {
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'http://localhost:8080/tvw-api';
 
   constructor(private http: Http) { }
 
   getTrainings(): Promise<Training[]> {
-    return this.http.get(this.baseUrl + '/tvw-api/trainings')
+    return this.http.get(this.baseUrl + '/trainings')
       .toPromise()
       .then(response => response.json() as Training[])
       .catch(this.handleError);
   }
 
   getTrainers(): Promise<Trainer[]> {
-    return this.http.get(this.baseUrl + '/tvw-api/trainers')
+    return this.http.get(this.baseUrl + '/trainers')
       .toPromise()
       .then(response => response.json() as Trainer[])
       .catch(this.handleError);
   }
 
   getParticipants(): Promise<Participant[]> {
-    return this.http.get(this.baseUrl + '/tvw-api/participants')
+    return this.http.get(this.baseUrl + '/participants')
       .toPromise()
       .then(response => response.json() as Participant[])
       .catch(this.handleError);
   }
 
   createTrainer(trainerData: Trainer): Promise<Trainer> {
-    return this.http.post(this.baseUrl + '/api/createTrainer', trainerData)
+    return this.http.post(this.baseUrl + '/createTrainer', trainerData)
       .toPromise().then(response => response.json() as Trainer)
       .catch(this.handleError);
   }
-  
 
   createTraining(trainingData: Training): void {
-    this.http.post(this.baseUrl + '/tvw-api/trainings', trainingData);
+    this.http.post(this.baseUrl + '/trainings', trainingData);
   }
 
   private handleError(error: any): Promise<any> {
