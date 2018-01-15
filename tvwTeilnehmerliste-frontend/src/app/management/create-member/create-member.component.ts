@@ -11,11 +11,10 @@ import { TvwApiService } from '../../tvw-api.service'
   styleUrls: ['./create-member.component.css']
 })
 export class CreateMemberComponent implements OnInit {
-  selectedType: string;
+  selectedType;
   newMember: Member;
-  readonly TYPE_TRAINER: string = 'Trainer';
-  readonly TYPE_PARTICIPANT: string = 'Teilnehmer';
-
+  readonly TYPE_TRAINER  = 'Trainer';
+  readonly TYPE_PARTICIPANT  = 'Teilnehmer';
 
   constructor(
     private tvwApiService: TvwApiService,
@@ -36,14 +35,14 @@ export class CreateMemberComponent implements OnInit {
   }
 
   save(): void {
-    if(this.selectedType == null || this.selectedType == ''){
+    if(this.selectedType == null || this.selectedType === ''){
       //TODO: show exception that no type was selected.
       return;
     }
-    if(this.selectedType == this.TYPE_TRAINER){
+    if(this.selectedType === this.TYPE_TRAINER){
       this.createTrainer();
     }
-    if(this.selectedType == this.TYPE_PARTICIPANT){
+    if(this.selectedType === this.TYPE_PARTICIPANT){
       this.createParticipant();
     }
   }

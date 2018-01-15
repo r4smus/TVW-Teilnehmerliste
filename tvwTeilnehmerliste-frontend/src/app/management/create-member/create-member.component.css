@@ -1,0 +1,12 @@
+.dataRow {
+    margin-bottom: 15px;
+}
+
+.dataRow label {
+    display: inline-block;
+    width: 150px;
+}
+
+.dataRow select {
+    width: 173px;
+}
