@@ -45,6 +45,8 @@ export class CreateMemberComponent implements OnInit {
     if(this.selectedType === this.TYPE_PARTICIPANT){
       this.createParticipant();
     }
+    this.tvwApiService.getParticipants();
+    this.tvwApiService.getTrainers();
   }
 
 
