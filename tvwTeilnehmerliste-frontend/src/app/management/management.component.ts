@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Trainer } from '../trainer';
-import { TEMPLATE_DRIVEN_DIRECTIVES } from '@angular/forms/src/directives';
+import { Participant } from '../participant';
+import { TvwApiService } from '../tvw-api.service';
 
 @Component({
   selector: 'app-management',
@@ -9,13 +10,28 @@ import { TEMPLATE_DRIVEN_DIRECTIVES } from '@angular/forms/src/directives';
 })
 export class ManagementComponent implements OnInit {
 
+  trainers: Trainer[];
+  participants: Participant[];
 
-  constructor() { }
+
+  constructor(
+    private tvwApiService: TvwApiService,
+              ) { }
 
   ngOnInit() {
+    this.getTrainers();
+    this.getParticipants();
   }
 
+  getTrainers(): void {
+    this.tvwApiService.getTrainers()
+      .then(trainers => this.trainers = trainers);
+  }
 
-  
+  getParticipants(): void {
+    this.tvwApiService.getParticipants()
+      .then(participants => this.participants = participants);
+  }
+
 
 }

@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Turnverein Willmatshofen';
-  subtitle = 'Teilnehmerliste - Freies Kraftsport-Training';
+  subtitle = 'Freies Kraftsport-Training';
 }

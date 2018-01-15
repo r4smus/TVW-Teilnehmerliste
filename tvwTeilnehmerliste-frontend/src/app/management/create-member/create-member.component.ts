@@ -3,7 +3,7 @@ import { Trainer } from '../../trainer';
 import { Member } from '../../member';
 import { Participant } from '../../participant';
 
-import { TvwApiService } from '../../tvw-api.service'
+import { TvwApiService } from '../../tvw-api.service';
 
 @Component({
   selector: 'app-create-member',

@@ -1,26 +1,23 @@
-.wrapper {
-    max-width: 40em;
-    margin: 0 auto;
-    cursor: pointer;
+.trainerBox {
+    float: left;
+    margin-right: 70px;
 }
 
-.container {
-    padding: 1em;
-    margin-bottom: 1em;
-    background: deepskyblue;
-    transition: padding .3s;
+.participantBox {
+    float: left;
 }
 
-.container.special {
-    background: green;
-    color: white;
+ul {
+    padding: 0px;
 }
 
-input {
-    display: none;
-}
-
- :checked+label {
-    border: 1px solid rgba(81, 203, 238, 1);
-    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+ul li {
+    width: 270px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    background: white;
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding: 5px;
 }

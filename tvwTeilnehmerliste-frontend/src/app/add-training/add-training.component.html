@@ -1,29 +1,34 @@
 <form>
-    <div class="chooseBox">
-        <h4>Trainings-Datum</h4>
-        <div class="dateRow">
-            <label for="inputTrainingDate">Datum</label>
-            <input type="date" id="inputTrainingDate" name="input" [(ngModel)]="newTraining.date" placeholder="dd.MM.yyyy" required />
+    <div class="dataColumnOne">
+        <div class="chooseBox">
+            <h4>Trainings-Datum</h4>
+            <div class="dateRow">
+                <label for="inputTrainingDate">Datum</label>
+                <input type="date" id="inputTrainingDate" name="input" [(ngModel)]="newTraining.date" placeholder="dd.MM.yyyy" required />
+            </div>
+        </div>
+        <div class="chooseBox">
+            <h4>Übungsleiter auswählen</h4>
+            <ul>
+                <li *ngFor="let trainer of trainers">
+                    <input id="trainerChooseBox{{trainer.id}}" type="checkbox" [checked]="trainer.selected" (change)="trainer.selected = ! trainer.selected" />
+                    <label for="trainerChooseBox{{trainer.id}}">{{trainer.firstName}} {{trainer.lastName}}</label>
+                </li>
+            </ul>
         </div>
     </div>
-    <div class="chooseBox">
-        <h4>Übungsleiter auswählen</h4>
-        <ul>
-            <li *ngFor="let trainer of trainers">
-                <input id="trainerChooseBox{{trainer.id}}" type="checkbox" [checked]="trainer.selected" (change)="trainer.selected = ! trainer.selected" />
-                <label for="trainerChooseBox{{trainer.id}}">{{trainer.firstName}} {{trainer.lastName}}</label>
-            </li>
-        </ul>
+    <div class="dataColumnTwo">
+        <div class="chooseBox">
+            <h4>Teilnehmer auswählen</h4>
+            <ul>
+                <li *ngFor="let participant of participants">
+                    <input id="participantChooseBox{{participant.id}}" type="checkbox" [checked]="participant.selected" (change)="participant.selected = ! participant.selected" />
+                    <label for="participantChooseBox{{participant.id}}">{{participant.firstName}} {{participant.lastName}}</label>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="chooseBox">
-        <h4>Teilnehmer auswählen</h4>
-        <ul>
-            <li *ngFor="let participant of participants">
-                <input id="participantChooseBox{{participant.id}}" type="checkbox" [checked]="participant.selected" (change)="participant.selected = ! participant.selected" />
-                <label for="participantChooseBox{{participant.id}}">{{participant.firstName}} {{participant.lastName}}</label>
-            </li>
-        </ul>
-    </div>
+    <div class="clearer"></div>
     <div class="buttonRow">
         <a routerLink="/" routerLinkActive="active">
             <img title="Speichern" (click)="saveTraining()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADc0lEQVRoQ+2ZXUhTYRjH/+fMsOnSmZgKUoiaK8uZF0VKpOTADDGEguqiboKuwrC8qC7qwptMMQILQrrqQiIqkqFpplQXmSznRypZehNZDjc/Nt2OO+uc6camc9ur58xj7L17d97n2f/3f96Ps3cUtnijtrh+hAE2u4L/ZwXmThx2uJzt+zXj0+S/DY0bNr+o+po7h8OBuzs6uu+QJvVZgc0A4IWvB0JUgKrrlV6G3rtf69X3rIDrASmE5ABIKyFJABIIyQLwEIp33QF3yTCAv21vPYvYM1+4ArwbQ79nwbDuc81tkKG6BmzcTtJzxz1ebjQgv6Hab7wgFZi22PBnxooFuzeEVZ2LubJy2JOSiSGiJyeQ3tGMhNFB8QGI1QkYIEgFBNRDnCoMQGyZwAHhCvCGyp88A52aLrC3vtOxY6OYv3zB/VCQCkS3fw6JeNeXmIuOhAHg+YtsZQV6R34QVaSh7ioS4+VQH8iEKqcUi7IEr/iczDSvvugVIAV4/vQGPvQzeHjuC9S7TbDKUmGUaTCpuAT7tliEHIDIfm5w2+tqKKYe4WiaYSlUngX0jwAxGUBpBxAZF9oKkAJgYRzoVi2Lz+HEDwCMeakfz/VXQEhuCvE69xs0sLOx2D48CIplvD1YASFJgKSpB0gceLxavAvFA0J0AOIpxAcwc4D2JDDxce3wZQjzqWKJngNBQpgbaQ44wgkhyklMuo16Wk4vmpGhPw/57No/ZFhjFOa7uEXPQUgOgIeRMSak910MCkLRotv4tYoo70LWKaBZAxh0a64JvhJ69e1duSU3J/2tu4D3QqIA8IoCQOgdtzC2t0Qnl1Oa4rw8jth3Cwgg6us0D/EqHzANe6nrZ6vwU1Xm/Iy77NUxtPL42cIsbitb3QICrGvbJAiiIm2QFwyDillwRn2zV+D7vjPuDDTD6LO73s7GWiylcfX1ppWpNx2AF+SCGIq+skq8ul27J4K1K7lLnc6U2trCoAAIDBRs6PiL8uReZWUr97fjQT5pBGP7lN2uzZKxrHJpKjn0KXV13MuTdwu4TQmmMIhEL99/VYK1tMoWbeyhNq2KdiyLB6ZB0wUpNTW9kgbgxb3p6YlSNzW1cM4fczrvR7xz+gVhTMiHGCsqlGaa7qQoSumg6dO+nHeJkiQAiWNhABK3xBgbroAYrpLk/AfNpfZAV8mUUgAAAABJRU5ErkJggg==">
