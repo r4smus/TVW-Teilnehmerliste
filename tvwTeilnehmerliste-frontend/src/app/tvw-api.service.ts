@@ -55,6 +55,12 @@ export class TvwApiService {
       .catch(this.handleError);
   }
 
+  deleteParticipant(id: number): Promise<any> {
+    return this.http.delete(this.baseUrl + '/deleteParticipant/' + id)
+      .toPromise()
+      .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('Some error occured', error);
     return Promise.reject(error.message || error);

@@ -38,7 +38,13 @@ export class ManagementComponent implements OnInit {
       .then(() => {
         this.trainers = this.trainers.filter(trainer => trainer.id !== id);
       });
+  }
 
+  deleteParticipant(id: number): void {
+    this.tvwApiService.deleteParticipant(id)
+      .then(() => {
+        this.participants = this.participants.filter(participant => participant.id !== id);
+      });
   }
 
 
