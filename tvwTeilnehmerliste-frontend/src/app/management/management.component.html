@@ -4,6 +4,7 @@
         <ul>
             <li *ngFor="let trainer of trainers">
                 <label for="trainerChooseBox{{trainer.id}}">{{trainer.firstName}} {{trainer.lastName}}</label>
+                <img class="hoverButton"  title="Löschen" (click)="deleteTrainer(trainer.id)" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAB6UlEQVRoQ+2YsU7DMBCG7TRI9AlYKpWNFSRGpAILz8wCVOqIBCsblbLwBEWixNhpHVLFSc72b5IId21y/r/7L3eXcDbyHx+5fhYB+nYwOhAd8MzA/yqhzfX5qUrY9On13TNxxttd4pMd+Ly5PNvy5F6dPGFfi+nDyxoJsbm9mH+zo6WKmYr87vjx+Y0SnwSwF7+UU+OkCCrYGglRiudsvo//ISEWFIhOgJp4nRYQRE38b3wShDsAwIlG8bvYGAAVq9EFDwiEeHV8pwPaUSQESrwVAMoJpHhrAF8ItHgnAFeIEOKdAWwhQon3AqBCqOuKCauHVHW8Eltl20Qmd6GmIO3dSWRcyJae8FntfjkIbVaGpvO9AbqdkASF15WjQFPcu4SqWSmXPWOpVCCA4qEAKtjuYU1XMtuGkhFMllOW8O0VcpOFlJB2QgHkIl0JzmYHJaMvECKbsIECHLRKYaj7EgK7ikMcMNb/H0F4A7S1UZ6LTJaT6kDDbKOUDXWwg4wiXnebwa0SNuKrHSrESmH9DLiIDwlhBeAjPhQEGQAhPgQECQApHg3RCRBCPBLCHQC0VQb/sGXc90HiG52weFPrdEAfMuqPu2Wmxvx5ve3Fus//yCXUp8igXyX6BosORAc8MxBLyDOB3rf/AFFuAk8GssGFAAAAAElFTkSuQmCC">
             </li>
         </ul>
     </div>
@@ -12,6 +13,7 @@
         <ul>
             <li *ngFor="let participant of participants">
                 <label for="participantChooseBox{{participant.id}}">{{participant.firstName}} {{participant.lastName}}</label>
+                <img class="hoverButton"  title="Löschen" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAB6UlEQVRoQ+2YsU7DMBCG7TRI9AlYKpWNFSRGpAILz8wCVOqIBCsblbLwBEWixNhpHVLFSc72b5IId21y/r/7L3eXcDbyHx+5fhYB+nYwOhAd8MzA/yqhzfX5qUrY9On13TNxxttd4pMd+Ly5PNvy5F6dPGFfi+nDyxoJsbm9mH+zo6WKmYr87vjx+Y0SnwSwF7+UU+OkCCrYGglRiudsvo//ISEWFIhOgJp4nRYQRE38b3wShDsAwIlG8bvYGAAVq9EFDwiEeHV8pwPaUSQESrwVAMoJpHhrAF8ItHgnAFeIEOKdAWwhQon3AqBCqOuKCauHVHW8Eltl20Qmd6GmIO3dSWRcyJae8FntfjkIbVaGpvO9AbqdkASF15WjQFPcu4SqWSmXPWOpVCCA4qEAKtjuYU1XMtuGkhFMllOW8O0VcpOFlJB2QgHkIl0JzmYHJaMvECKbsIECHLRKYaj7EgK7ikMcMNb/H0F4A7S1UZ6LTJaT6kDDbKOUDXWwg4wiXnebwa0SNuKrHSrESmH9DLiIDwlhBeAjPhQEGQAhPgQECQApHg3RCRBCPBLCHQC0VQb/sGXc90HiG52weFPrdEAfMuqPu2Wmxvx5ve3Fus//yCXUp8igXyX6BosORAc8MxBLyDOB3rf/AFFuAk8GssGFAAAAAElFTkSuQmCC">
             </li>
         </ul>
     </div>

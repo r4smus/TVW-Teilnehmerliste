@@ -11,19 +11,6 @@
     margin-bottom: 15px;
 }
 
-#training-list>li>img {
-    width: 30px;
-    height: 30px;
-    float: right;
-    margin-left: 20px;
-    margin-top: -5px;
-}
-
-#training-list>li>img:hover {
-    background: #f4dcdc;
-    cursor: pointer;
-}
-
 #training-list .details {
     border-style: outset;
     border-width: 2px;

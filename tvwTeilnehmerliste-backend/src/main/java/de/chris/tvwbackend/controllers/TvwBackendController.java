@@ -83,6 +83,11 @@ public class TvwBackendController {
         return participantRepository.save(participant);
     }
     
+    @DeleteMapping(value="/deleteTrainer/{id}")
+    public void deleteTrainer(@PathVariable("id") Integer id) {
+        trainerRepository.delete(id);
+    }
+    
     private void initTestData1() {
     	//Training 1
     	Training training1 = new Training();

@@ -92,6 +92,19 @@ nav a:hover {
     cursor: pointer;
 }
 
+.hoverButton {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-left: 20px;
+    margin-top: -5px;
+}
+
+.hoverButton:hover {
+    background: #f4dcdc;
+    cursor: pointer;
+}
+
 
 /* FOOTER */
 
