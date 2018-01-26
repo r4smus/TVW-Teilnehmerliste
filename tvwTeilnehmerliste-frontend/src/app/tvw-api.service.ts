@@ -39,9 +39,9 @@ export class TvwApiService {
       .catch(this.handleError);
   }
 
-  createParticipant(participantData: Participant): Promise<Trainer> {
+  createParticipant(participantData: Participant): Promise<Participant> {
     return this.http.post(this.baseUrl + '/createParticipant', participantData)
-      .toPromise().then(response => response.json() as Trainer)
+      .toPromise().then(response => response.json() as Participant)
       .catch(this.handleError);
   }
 
