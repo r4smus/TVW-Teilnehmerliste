@@ -21,3 +21,18 @@ ul li {
     margin-bottom: 10px;
     padding: 10px;
 }
+
+.hideError {
+    display: none;
+}
+
+.showError {
+    display: block;
+    color: red;
+    font-size: small;
+    margin: 10px;
+    border: solid;
+    border-radius: 10px;
+    padding: 5px;
+    background: white;
+}
