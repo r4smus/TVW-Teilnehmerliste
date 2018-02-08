@@ -5,6 +5,7 @@ import { MemberListComponent } from './member-list/member-list.component';
 import { ManagementComponent } from './management/management.component';
 import { AddTrainingComponent } from './add-training/add-training.component';
 import { CreateMemberComponent } from './management/create-member/create-member.component';
+import { EditMemberComponent } from './management/edit-member/edit-member.component';
 
 
 
@@ -24,6 +25,10 @@ const routes: Routes = [
     {
         path: 'createMember',
         component: CreateMemberComponent
+    },
+    {
+        path: 'edit-member/:type/:id',
+        component: EditMemberComponent
     }
 
 ];

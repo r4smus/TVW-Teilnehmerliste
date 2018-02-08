@@ -12,6 +12,7 @@ import { AddTrainingComponent } from './add-training/add-training.component';
 
 import { TvwApiService } from './tvw-api.service';
 import { CreateMemberComponent } from './management/create-member/create-member.component';
+import { EditMemberComponent } from './management/edit-member/edit-member.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CreateMemberComponent } from './management/create-member/create-member.
     MemberListComponent,
     ManagementComponent,
     AddTrainingComponent,
-    CreateMemberComponent
+    CreateMemberComponent,
+    EditMemberComponent
   ],
   imports: [
     BrowserModule,
