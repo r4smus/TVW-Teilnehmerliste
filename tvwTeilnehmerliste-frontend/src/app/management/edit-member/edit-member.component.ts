@@ -22,8 +22,20 @@ export class EditMemberComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // const domainType: Observable<string> = this.route.params.switchMap(p => p.type);
+    let memberType = this.route.snapshot.paramMap.get('type');
+    let memberId = this.route.snapshot.paramMap.get('id');
+    
+    // console.log(memberId);
+
+    if(memberType == 'trainer'){
+      this.tvwApiService.getTrainerById(memberId)
+        .then(trainer => this.trainer = trainer);
+      console.log(this.trainer);
+    }
+
     // this.route.params.switchMap((params: Params) =>
-    //     this.tvwApiService.getHero(+params['id']))
+    //     this.tvwApiService.getTrainerById(+params['id']))
     //         .subscribe(trainer => this.trainer = trainer);
   }
 

@@ -26,6 +26,14 @@ export class TvwApiService {
       .catch(this.handleError);
   }
 
+  getTrainerById(id: string): Promise<Trainer> {
+    const url = `${this.baseUrl}/trainer/${id}`;
+        return this.http.get(url)
+            .toPromise()
+            .then(response => response.json().data as Trainer)
+            .catch(this.handleError);
+  }
+
   getParticipants(): Promise<Participant[]> {
     return this.http.get(this.baseUrl + '/participants')
       .toPromise()

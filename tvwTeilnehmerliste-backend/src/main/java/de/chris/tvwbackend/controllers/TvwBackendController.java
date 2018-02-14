@@ -58,6 +58,16 @@ public class TvwBackendController {
         }
     }
     
+    @GetMapping(value="/trainer/{id}")
+    public ResponseEntity<Trainer> getTrainerById(@PathVariable("id") Integer id) {
+        Trainer trainer = trainerRepository.findOne(id);
+        if(trainer == null) {
+            return new ResponseEntity<Trainer>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<Trainer>(trainer, HttpStatus.OK);
+        }
+    }
+    
     @GetMapping(value="/trainers")
     public Iterable<Trainer> getAllTrainers(){
     	return  trainerRepository.findAll();
