@@ -12,11 +12,16 @@ import { EditMemberComponent } from './management/edit-member/edit-member.compon
 const routes: Routes = [
     {
         path: '',
+        redirectTo: 'trainings',
+        pathMatch: 'full'
+    },
+    {
+        path: 'trainings',
         component: MemberListComponent
     },
     {
         path: 'management',
-        component: ManagementComponent
+        component: ManagementComponent,
     },
     {
         path: 'addTraining',
